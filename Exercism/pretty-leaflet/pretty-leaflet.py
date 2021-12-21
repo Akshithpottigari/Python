@@ -2,21 +2,26 @@ from typing import List
 
 
 import calendar
+
+
 def capitalize_header(event_name):
     return event_name.capitalize()
 
-def format_date(event_date: List[int])->str:
+
+def format_date(event_date: List[int]) -> str:
     date, month, year = event_date
     month_name = calendar.month[month]
     return '{} {}. {}'.format(month_name, date, year)
 
-def display_icons(icons:List[str])->List[str]:
+
+def display_icons(icons: List[str]) -> List[str]:
     displayed = []
     for i in icons:
         displayed.append('{}'.format(i))
     return displayed
 
-def print_leaflet(event_name: str, icons: List[str], authors: List[str], event_date: Optional[List[int]]=None):
+
+def print_leaflet(event_name: str, icons: List[str], authors: List[str], event_date: Optional[List[int]] = None):
     row_full = ''.join(['*'] * 20)
     empty_row = f'*{"":^18}*'
     event_name = capitalize_header(event_name)
